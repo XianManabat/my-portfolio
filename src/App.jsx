@@ -1,34 +1,50 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { SiGmail,  SiInstagram, SiFacebook } from 'react-icons/si'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div style={{ backgroundColor: '#111827', minHeight: '100vh' }}>
+      
+      {/* Navbar */}
+      <div style={{ 
+        display: 'flex', 
+        justifyContent: 'space-between', 
+        alignItems: 'center',
+        padding: '16px 32px',
+        borderBottom: '1px solid #374151'
+      }}>
+        <h1 style={{ color: 'white', fontWeight: 'bold', fontSize: '20px', margin: 0 }}>
+          Jeremiah Felix M. Manabat
+        </h1>
+          
+        <ul style={{ 
+          display: 'flex', 
+          gap: '32px', 
+          listStyle: 'none', 
+          margin: 0, 
+          padding: 0,
+          alignItems: 'center'
+        }}>
+          <li style={{ color: '#d1d5db', cursor: 'pointer' }}>Home</li>
+          <li style={{ color: '#d1d5db', cursor: 'pointer' }}>Resume</li>
+          <li style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
+            <SiGmail style={{ color: '#d1d5db', fontSize: '20px' }} />
+          </li>
+          <li style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
+            <SiInstagram style={{ color: '#d1d5db', fontSize: '20px' }} />
+          </li>
+          <li style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
+            <SiFacebook style={{ color: '#d1d5db', fontSize: '20px' }} />
+          </li>
+        </ul>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+
+      {/* Main content */}
+      <div style={{ textAlign: 'center', paddingTop: '120px', color: 'white' }}>
+        <h2 style={{ fontSize: '32px', marginBottom: '16px' }}>Computer Engineering Student</h2>
+        <p style={{ color: '#9ca3af', fontSize: '18px' }}>Pampanga State University</p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+
+    </div>
   )
 }
 
