@@ -1,0 +1,68 @@
+.hero {
+    padding-top: 80px;
+    background-color: black;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;  /* ← This hides the bottom half */
+}
+
+.messageBox {
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.messageBox p {
+    font-size: 1.2rem;
+    color: #d1d5db;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.earthBG {
+    position: absolute;
+    bottom:-140%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 100%;
+    height: auto;
+    z-index: 1;
+    animation: float 6s ease-in-out infinite;
+}
+
+.messageBox, .earthBG {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+   
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+    
+}
+
+.messageBox, .earthBG {
+    animation: fadeOut linear forwards;
+    animation-timeline: scroll();
+    animation-range: exit;
+   
+}
+
+
+@media (max-width: 760px) {
+    .earthBG {
+        bottom: -30%;  
+        width: 120%; 
+    }
+}
+

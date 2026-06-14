@@ -1,0 +1,194 @@
+/* Main navbar container */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #00000094;
+  backdrop-filter: blur(10px);
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 50;
+  box-sizing: border-box;
+}
+
+/* Name styles */
+.desktop-name {
+  display: block;
+  color: rgb(243, 243, 243);
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.mobile-name {
+  display: none;
+}
+
+/* Desktop navigation - horizontal */
+.nav-linksLeft{
+  flex: 1.13;
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.nav-linksRight {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  padding-left: 100px;
+  justify-content: flex-end;
+}
+
+.nav-linksLeft li, .nav-linksRight li {
+  color: #d1d5db;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.nav-linksLeft li:hover, .nav-linksRight li:hover {
+  color: white;
+}
+
+.nav-linksRight li svg {
+  font-size: 1.25rem;
+  vertical-align: middle;
+}
+.nav-linksLeft a, .nav-linksRight a, .mobile-nav-links a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Keep hover effect for desktop */
+.nav-linksLeft li:hover, .nav-linksRight li:hover {
+    color: white;
+}
+
+/* Icon links styling */
+.nav-linksRight a {
+    display: flex;
+    align-items: center;
+}
+
+/* Mobile nav links */
+.mobile-nav-links a {
+    display: block;
+    width: 100%;
+}
+/* Burger menu - hidden on desktop */
+.burger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 101;
+}
+
+.burger .line {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+.burger .line.open:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger .line.open:nth-child(2) {
+  opacity: 0;
+}
+
+.burger .line.open:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Mobile sidebar - hidden by default */
+.sidebars {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 75%;
+  height: 100vh;
+  background-color: #000000e6;
+  backdrop-filter: blur(20px);
+  transition: left 0.3s ease;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+}
+
+.sidebars.open {
+  left: 0;
+}
+
+/* Mobile navigation links */
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.mobile-nav-links li {
+  color: #d1d5db;
+  cursor: pointer;
+  transition: color 0.2s;
+  padding: 12px;
+  font-size: 1.25rem;
+}
+
+.mobile-nav-links li:hover {
+  color: white;
+}
+
+.mobile-nav-links li svg {
+  font-size: 1.5rem;
+  vertical-align: middle;
+}
+
+/* ========== MOBILE VIEW ========== */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 16px 20px;
+  }
+
+  /* Hide desktop name, show mobile name */
+  .desktop-name {
+    display: none;
+  }
+
+  .mobile-name {
+    display: block;
+    color: rgb(243, 243, 243);
+    font-weight: bold;
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  /* Hide desktop navigation on mobile */
+  .nav-linksLeft, .nav-linksRight {
+    display: none;
+  }
+
+  /* Show burger */
+  .burger {
+    display: flex;
+  }
+}

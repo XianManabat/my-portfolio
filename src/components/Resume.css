@@ -1,0 +1,85 @@
+.Resume {
+     padding-top: 80px;
+    min-height: 100vh;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.resumeSection {
+    width: 90%;
+    max-width: 900px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border: 1px solid #ddd;
+}
+
+.resumeSection img {
+    width:100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+.certificate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 10px;
+}
+
+/* Certificate Card */
+.certificate-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid #eee;
+}
+
+.certificate-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.certificate-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+
+@media (max-width: 760px) {
+    .Resume {
+        padding-top: 60px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+     .resumeSection {
+        width: 100%;
+        padding: 10px;
+        margin: 10px auto;
+    }
+    
+    .resumeSection img {
+        width: 100%;
+    }
+
+    .certificate-grid {
+        grid-template-columns: 1fr;
+        width: 100%;
+        gap: 20px;
+        padding: 5px;
+    }
+}
